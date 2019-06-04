@@ -15,9 +15,9 @@ tsv_test = os.path.join(dir_, 'test.tsv')
 target_dir = os.path.join(dir_, 'labels.txt')
 
 test_list = [3, 5, 14, 26, 29, 35]
-tsv_train = open(tsv_train, 'w')
-tsv_test = open(tsv_test, 'w')
-targets = open(target_dir, 'r')
+tsv_train = open(tsv_train, 'w', encoding='utf8')
+tsv_test = open(tsv_test, 'w', encoding='utf8')
+targets = open(target_dir, 'r', encoding='utf8')
 target = targets.readlines()[0].split()  # ['1','1',...,'0']
 for news_id in range(num_news):
     news_name = '新闻'+str(news_id+1)+'.txt'

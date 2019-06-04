@@ -160,9 +160,7 @@ class DataProcessor(object):
       return lines
 
 
-class QuaroProcessor(DataProcessor):
-  """Processor for the quaro data set (GLUE version)."""
-
+class NewsProcessor(DataProcessor):
   def get_train_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
@@ -583,7 +581,7 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
 def main(_):
   tf.logging.set_verbosity(tf.logging.INFO)
 
-  processors = {"quaro": QuaroProcessor}
+  processors = {"news": NewsProcessor}
 
   if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:
     raise ValueError(

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-python run_classifier.py \
-  --task_name=MRPC \
+python news_classification.py \
+  --task_name=News \
   --do_train=true \
   --do_eval=true \
   --data_dir=./data/news \
-  --vocab_file=./data/pretrained/chinese_base/vocab.txt \
-  --bert_config_file=./data/pretrained/chinese_base/bert_config.json \
-  --init_checkpoint=./data/pretrained/chinese_base/bert_model.ckpt \
+  --vocab_file=./data/pretrained_model/chinese_base/vocab.txt \
+  --bert_config_file=./data/pretrained_model/chinese_base/bert_config.json \
+  --init_checkpoint=./data/pretrained_model/chinese_base/bert_model.ckpt \
   --max_seq_length=300 \
   --train_batch_size=2 \
   --learning_rate=2e-5 \

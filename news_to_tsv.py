@@ -12,11 +12,13 @@ if not os.path.exists(dir_):
     os.mkdir(dir_)
 tsv_train = os.path.join(dir_, 'train.tsv')
 tsv_test = os.path.join(dir_, 'test.tsv')
+tsv_dev = os.path.join(dir_, 'dev.tsv')
 target_dir = os.path.join(dir_, 'labels.txt')
 
 test_list = [3, 5, 14, 26, 29, 35]
 tsv_train = open(tsv_train, 'w', encoding='utf8')
 tsv_test = open(tsv_test, 'w', encoding='utf8')
+tsv_dev = open(tsv_dev, 'w', encoding='utf8')
 targets = open(target_dir, 'r', encoding='utf8')
 target = targets.readlines()[0].split()  # ['1','1',...,'0']
 for news_id in range(num_news):
@@ -33,7 +35,9 @@ for news_id in range(num_news):
             tsv_train.write(target[news_id]+'\t'+b+'\n')
         else:
             tsv_test.write(target[news_id]+'\t'+b+'\n')
+            tsv_dev.write(target[news_id]+'\t'+b+'\n')
 
 tsv_train.close()
 tsv_test.close()
+tsv_dev.close()
 targets.close()

@@ -3,6 +3,7 @@ python news_classification.py \
   --task_name=News \
   --do_train=true \
   --do_eval=true \
+  --do_predict=true \
   --data_dir=./data/news \
   --vocab_file=./data/pretrained_model/chinese_base/vocab.txt \
   --bert_config_file=./data/pretrained_model/chinese_base/bert_config.json \
